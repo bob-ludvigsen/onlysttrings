@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <title> Advanced JavaScript Project: objectContainsOnlyStrings() </title>
+    <meta charset="utf-8">
+    <script>
+        function objectContainsOnlyStrings(o) {
+            var ansver;
+
+            //loop through all the properties in the o object
+            for (var prop in o) {
+                //check if the property is a string or not
+                if (typeof o[prop] !== "string") {
+                    ansver = 'no';
+                    // if ansver is set to 'no', then break out of the loop.
+                    break;
+                }
+                else if (typeof o[prop] === "string"){
+                   //set answer to yes and continue looping
+                    ansver = 'yes';
+                }
+            }
+            //return ansver;
+            if (ansver == 'no') {
+                return 'no';
+            }
+            else if(ansver == 'yes'){
+                return 'Yes';
+            }
+
+        }
+        console.log("----- Contains Strings -----");
+
+        var bird = {
+            phylum: "chordata",
+            class: "aves",
+            feathered: true,
+            flies: true
+        };
+        console.log("Does bird contain only strings? " + objectContainsOnlyStrings(bird));
+
+        var oStrings = {
+            s1: "string1",
+            s2: "string2"
+        }
+        console.log("Does oStrings contain only strings? " + objectContainsOnlyStrings(oStrings));
+    </script>
+</head>
+<body>
+</body>
+</html>     
